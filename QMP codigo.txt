@@ -1,0 +1,47 @@
+public enum Material{
+	ALGODON,
+	POLIESTER,
+	CUERO,
+	DENIM,
+	LANA
+}
+
+public enum Categoria{
+	PRENDA_SUPERIOR,
+	CALZADO,
+	PREDNA_INFERIOR,
+	ACCESORIO
+}
+public enum Color{ //idealmente usar valored hexadecimales RGB para colores pero no se bien como definirlo
+	ROJO,
+	AZUL,
+	AMARILLO,
+	BLANCO,
+	NEGRO
+}
+public class Prenda {
+
+  Tipo tipo;
+  Material material;
+  Color colorPrimario;
+  Color colorSecundario;
+
+  constructor(Tipo tipo,Material material,Color color, Color colorSecundario) {
+    this.tipo = requireNonNull(tipo, "la prenda necesita un tipo");
+    this.material = requireNonNull(material, "la prenda necesita un material");
+    this.color = requireNonNull(color, "la prenda necesita al menos un color");
+    this.colorSecundario = colorSecundario;
+  }
+}
+
+public class Tipo{
+  Categoria categoria;
+
+  constructor(Categoria categoria){
+    this.categoria = requireNonNull(categoria, "el tipo necesita una categoria");
+  }
+}
+
+
+
+
